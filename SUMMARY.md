@@ -24,3 +24,4 @@ API behavior is mocked where needed.
 
 Fixture files are used to initialize required test data and state.
 
+Depends on env 2 different playwright configs could be used
