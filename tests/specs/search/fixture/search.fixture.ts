@@ -8,12 +8,12 @@ interface StarWarsFixtures {
 }
 
 export const searchFixtureTest = base.extend<StarWarsFixtures>({
-    apiMocker: async ({ page }, use) => {
+    apiMocker: [async ({ page }, use) => {
         const mocker = new ApiMocker(page);
         await mocker.enableMocking();
         await use(mocker);
         await mocker.disableMocking();
-    },
+    }, {auto: true}],
     searchPage: async ({page}, use) => {
         const searchPage = new StarWarsSearchPage(page);
         await searchPage.navigateToApp();
